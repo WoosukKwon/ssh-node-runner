@@ -1,0 +1,30 @@
+log_dir: logs
+
+defaults:
+  timeout: 10
+  user: ubuntu
+  port: 22
+  stop_on_error: true
+  no_logs: false
+  envs:
+    NEW_USER: woosuk  # Replace with your username
+
+command_groups:
+  setup:
+    # Create user
+    - sudo useradd -m $NEW_USER
+    - sudo usermod -s /bin/bash $NEW_USER
+
+    # Create .ssh directory and copy authorized_keys
+    - sudo mkdir -p /home/$NEW_USER/.ssh
+    - sudo cp ~/.ssh/authorized_keys /home/$NEW_USER/.ssh/authorized_keys
+    - sudo chown -R $NEW_USER:$NEW_USER /home/$NEW_USER/.ssh
+    - sudo chmod 700 /home/$NEW_USER/.ssh
+    - sudo chmod 600 /home/$NEW_USER/.ssh/authorized_keys
+
+    # Add user to sudo group
+    - sudo usermod -aG sudo $NEW_USER
+
+    # Add user to sudoers file and remove password requirement
+    - echo "$NEW_USER ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/$NEW_USER
+    - sudo chmod 440 /etc/sudoers.d/$NEW_USER
