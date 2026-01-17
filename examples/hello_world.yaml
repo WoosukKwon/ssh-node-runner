@@ -23,6 +23,7 @@ command_groups:
     - pwd
     - whoami
     - hostname
+    - echo "Hello, World!"
 
   gpu_status:
     - nvidia-smi
