@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Main entry point for node-runner."""
+"""Main entry point for Scatter."""
 
 import argparse
 import asyncio

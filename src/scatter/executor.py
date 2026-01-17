@@ -1,4 +1,4 @@
-"""SSH execution engine for node-runner."""
+"""SSH execution engine for Scatter."""
 
 from __future__ import annotations
 

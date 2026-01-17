@@ -1,4 +1,4 @@
-"""TUI Dashboard for node-runner."""
+"""TUI Dashboard for Scatter."""
 
 import asyncio
 from dataclasses import dataclass

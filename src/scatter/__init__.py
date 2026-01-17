@@ -1,4 +1,4 @@
-"""node-runner: Run commands on multiple SSH nodes with real-time monitoring."""
+"""scatter: Run commands on multiple SSH nodes with real-time monitoring."""
 
 from .config import Config, NodeConfig, Defaults, load_config
 from .executor import Executor, NodeStatus, NodeState

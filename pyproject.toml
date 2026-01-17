@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "node-runner"
+name = "scatter"
 version = "0.1.0"
 description = "Run commands on multiple SSH nodes with real-time monitoring"
 readme = "README.md"
@@ -15,7 +15,7 @@ dependencies = [
 ]
 
 [project.scripts]
-node-runner = "node_runner.runner:main"
+scatter = "scatter.runner:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

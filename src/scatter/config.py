@@ -1,4 +1,4 @@
-"""Configuration loader for node-runner."""
+"""Configuration loader for Scatter."""
 
 from __future__ import annotations
 
